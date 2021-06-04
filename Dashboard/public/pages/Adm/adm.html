@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- css link -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="css/styleAdm.css">
+    <link rel="stylesheet" href="../css/styleSidebar.css">
+    <link rel="stylesheet" href="../css/styleTable.css">
+    <link rel="icon" href="../../img/logo-white.png" type="image/x-icon" />
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <title>BankTracker</title>
+</head>
+
+<body>
+    <div class="containerPagina">
+        <section id="sidebar" class="sidebar">
+            <div class="container">
+                <div class="options">
+                    <div id="bt_icon" class="icon">
+                        <img src="../../img/icons/logo-white-small.png" alt="Logo Banktracker">
+                        <span class="subtitle hide">Banktracker</span>
+                    </div>
+                    <div id="dash" class="icon">
+                        <img src="../../img/icons/statistics-disabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Dashboard</span>
+                    </div>
+                    <div id="relatorio" class="icon">
+                        <img src="../../img/icons/clipboard-disabled.png" alt="Relatórios">
+                        <span class="subtitle hide">Relatórios</span>
+                    </div>
+                    <div id="Blacklist" class="icon">
+                        <img src="../../img/icons/Blacklist-disabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Blacklist</span>
+                    </div>
+                    <div id="Incidente" class="icon">
+                        <img src="../../img/icons/tool-disabeld.png" alt="Incidente">
+                        <span class="subtitle hide">Incidente</span>
+                    </div>
+                    <div id="config" class="icon">
+                        <img src="../../img/icons/engine-enabled.png" alt="Configurações">
+                        <span class="subtitle hide">Configurações</span>
+                    </div>
+                </div>
+                <div class="options">
+                    <div id="logout" class="icon">
+                        <img src="../../img/icons/power-off.png" alt="">
+                        <span class="subtitle hide">Logout</span>
+                    </div>
+                    <div id="icon_extend" class="icon">
+                        <img id="icon_extend_img" src="../../img/icons/extend-disabled.png" alt="">
+                        <span class="subtitle hide">Recolher</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Cadastrar suporte -->
+        <div class="todoConteudo">
+            <p class="titulo"><b style="color:#F3B700">C</b>adastrar o Suporte</span><br>
+            <div class="card_cadastrar">
+                <div class="headDados" id="headDados">
+                    <div class="opcoes_cadastro">
+                        <div class="title">
+                            <p>Preencher os dados do suporte</p>
+                        </div>
+                        <div class="img_expand">
+                            <img class='img_detalhes' id="img_detalhes" src="../../img/icons/expandindo-o-simbolo-disabled.png" onclick="details()">
+                        </div>
+                    </div>
+                    <div class="exibir_conteudo_dados" id="conteudo_card" style="display:none">
+                        <form id="form_cadastro" onsubmit="return validarCampos(true)">
+                            <input type="hidden" id="i0" name="idFuncionarioSuporte">
+                            <input type="text" placeholder="Nome" id="i1" name="nome" onkeyup="validarNome()">
+                            <input type="text" placeholder="CPF" id="i2" name="cpf" maxlength="14" onkeyup="formatarCPF()">
+                            <input type="text" placeholder="Telefone" id="i3" name="telefone" maxlength="15" onkeyup="formatarTelefone()">
+                            <input type="email" placeholder="Email" id="i4" name="email" onkeyup="validarEmail()">
+                            <input type="password" placeholder="Senha" id="i5" name="senha" onkeyup="validarSenha()">
+                            <input type="hidden" id="numAgencia" name="numAgencia" required>
+                            <button id="cadastrar_suporte" type="submit">Cadastrar</button>
+                            <button id="editar_suporte" type="submit" style="display: none;">Editar</button>
+                        </form>
+                    </div>
+                </div>
+             
+            </div>
+
+            <!-- Tabela do suporte -->
+            <p class="titulo"><b style="color:#F3B700">V</b>isualizar o Suporte</span></p>
+            <div class="tituloInformacoes">
+                <div class="table" id="supportTable">
+                    <div class="table_row row_title">
+                        <p class="table_title">ID</p>
+                        <p class="table_title">Nome</p>
+                        <p class="table_title">CPF</p>
+                        <p class="table_title">Telefone</p>
+                        <p class="table_title">Email</p>
+                        <!--<p class="table_title">Senha</p>-->
+                        <p class="delete" id="delete">Editar</p>
+                        <p class="delete" id="delete">Apagar</p>
+                    </div>
+                    <div class="div_cont" id="div_cont"></div>
+                </div>
+
+            </div>
+        </div>
+        <script src="../js/globalFunctions.js"></script>
+        <script src="../js/sidebar.js"></script>
+        <script src="js/script.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

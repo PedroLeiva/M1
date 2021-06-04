@@ -1,0 +1,132 @@
+body{
+    font-family: sans-serif;
+}
+
+#i2, #i3 {
+    width: 15%;
+}
+
+#i4 {
+    width: 23%;
+}
+
+#i5 {
+    width: 14%;
+}
+
+.containerPagina{
+    display: flex;
+    background-color: #f1f1f1;
+}
+.todoConteudo{
+    width: 85%;
+    margin-left: 50px; 
+    padding: 40px 0px 0px 15px;
+}
+.todoConteudo .titulo{
+    font-size: 25px;
+    padding-top: 20px;
+}
+.card_cadastrar{
+    border: .1rem solid rgba(60, 60, 60, 0.4);
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* box-shadow: .5rem 2px .5rem rgba(0,0, 0, .1); */
+}
+.headDados{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+}
+
+.headDados p{
+    margin-left: 30px;
+}
+
+.img_detalhes{
+    width: 20px;
+    margin-right: 45px;
+}
+
+.exibir_conteudo_dados{
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.tipo{
+    margin-left: 40px;
+    height: 50px;
+}
+
+.title{
+    width: 100%;
+}
+
+.opcoes_cadastro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.img_expand{
+    width: 50px;
+}
+
+button{
+    background-color: black;
+    color: white;
+    border: 0;
+    width: 130px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    border: 2px black solid;
+}
+
+.tituloInformacoes{
+    width: 100%;
+    height: 200px;
+}
+
+#checkboxselecionar{
+    margin-left: 15%;   
+}
+
+.tituloInformacoes .table{
+    height: 300px;
+}
+
+.exibir_conteudo_dados form{
+    font-size:  1.4rem;
+    padding-left: 1rem;
+}
+
+.exibir_conteudo_dados input{
+    width: 30%;
+    height: 50px;
+    border: 1px solid rgba(60, 60, 60, 0.4);
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    padding-left: 15px;
+}
+  
+.tituloInformacoes .table{
+    margin-top: 20px;
+}
+
+@keyframes fade_in{
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;  
+    }
+} 

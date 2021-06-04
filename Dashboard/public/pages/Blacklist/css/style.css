@@ -1,0 +1,105 @@
+div.wrapper {
+    display: flex;
+}
+
+section.blacklist{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+section.blacklist .container{
+    width: 90%;
+    height: 90vh;
+    
+}    
+
+p.blacklist_title{
+    font-size: 30px;
+}
+
+section.blacklist .input_container{
+    margin-top: 20px;
+}
+
+section.blacklist .input_container input{
+    width: 300px;
+    height: 45px;
+    outline: none;
+    border: 1.5px solid rgba(60, 60, 60, 0.4);
+    border-radius: 5px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+section.blacklist .input_container button{
+    width: 110px;
+    height: 45px;
+    margin-left: 5px;
+    background-color: rgba(0, 128, 0, 0.8);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+section.blacklist .input_container button:hover{
+    background-color: green;
+    transition: 0.2s;
+}
+
+/* Customização da table para esta tela */
+
+section.blacklist .table{
+    width: 40%;
+    margin-top: 25px;
+    border: 1.5px solid rgba(60, 60, 60, 0.4);
+    border-radius: 5px;   
+}
+
+section.blacklist .table .table_row p:nth-child(1){
+    width: 25%;
+    text-align: center;
+}
+
+section.blacklist .table .table_row p:nth-child(2){
+    width: 50%;
+    text-align: center;
+}
+
+section.blacklist .table .table_row p:last-child, 
+.table .table_row a{
+    width: 25%;
+}
+
+/* Fim da Customização da table */
+
+@keyframes rotacao{
+
+    to{
+        transform: rotate(360deg);
+    }  
+    
+}
+#rotacao{
+    animation-name: rotacao;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+
+@media (max-width:1366px){
+    section.blacklist .process_table{
+        width: 60%;
+    }
+
+}
+

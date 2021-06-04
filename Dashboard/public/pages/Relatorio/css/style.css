@@ -1,0 +1,36 @@
+div.wrapper {
+    display: flex;
+}
+
+/* relatorio */
+
+section.relatorio {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    background-color: #f1f1f1;
+}
+
+section.relatorio .table {
+    height: 550px;
+}
+
+section.relatorio div.cont_table {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@keyframes rotacao{
+
+    to{
+    transform: rotate(360deg);
+    }  
+        
+}
+#rotacao{
+    animation-name: rotacao;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}

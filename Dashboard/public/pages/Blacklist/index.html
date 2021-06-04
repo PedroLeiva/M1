@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../css/styleSidebar.css">
+    <link rel="stylesheet" href="../css/styleTable.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../../img/logo-white.png" type="image/x-icon">  
+    <title>BankTracker</title>
+</head>
+<body>
+    <div class="wrapper">
+        <section id="sidebar" class="sidebar">
+            <div class="container">
+                <div class="options">
+                    <div id="bt_icon" class="icon">
+                        <img src="../../img/icons/logo-white-small.png" alt="Logo Banktracker">
+                        <span class="subtitle hide">Banktracker</span>
+                    </div>
+                    <div id="dash" class="icon">
+                        <img src="../../img/icons/statistics-disabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Dashboard</span>
+                    </div>
+                    <div id="relatorio" class="icon">
+                        <img src="../../img/icons/clipboard-disabled.png" alt="Relatórios">
+                        <span class="subtitle hide">Relatórios</span>
+                    </div>
+                    <div id="Blacklist" class="icon">
+                        <img src="../../img/icons/Blacklist-enabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Blacklist</span>
+                    </div>
+                    <div id="Incidente" class="icon">
+                        <img src="../../img/icons/tool-disabeld.png" alt="Incidente">
+                        <span class="subtitle hide">Incidente</span>
+                    </div>
+                    <div id="config" class="icon">
+                        <img src="../../img/icons/engine-disabled.png" alt="Configurações">
+                        <span class="subtitle hide">Configurações</span>
+                    </div>
+                </div>
+                <div class="options">
+                    <div id="logout" class="icon">
+                        <img src="../../img/icons/power-off.png" alt="">
+                        <span class="subtitle hide">Logout</span>
+                    </div>
+                    <div id="icon_extend" class="icon">
+                        <img id="icon_extend_img" src="../../img/icons/extend-disabled.png" alt="">
+                        <span class="subtitle hide">Recolher</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blacklist">
+            <section class="container">
+                <p class="blacklist_title">Blacklist</p>
+                <p class="blacklist_subtitle">Cadastre aqui os procesos indesejados!</p>
+                <form class="input_container" id="form_processo" onsubmit="return CadastrarProcesso()">
+                    <input type="text" placeholder="Nome do processo" name="nomeProcesso" id="nome_processo" minlength="3" required/>
+                    <input type="hidden" value="" name="numAgencia" id="numAgencia" required/>
+                    <button type="submit" id="btn_inserir">Inserir</button>
+                </form>
+
+                <div class="table">
+                    <div class="table_row row_title">
+                        <p class="table_title">ID</p>
+                        <p class="table_title">Nome do Processo</p>
+                        <p class="delete" id="delete">Apagar</p>
+                    </div>
+                    <div class="cont_table" id="cont_table"></div>
+                </div>
+
+            </section>
+        </section> 
+    </div>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/globalFunctions.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

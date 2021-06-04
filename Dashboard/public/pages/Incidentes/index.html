@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidente</title>
+
+    <!-- link das paginas -->
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../css/styleSidebar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../../img/logo-white.png" type="image/x-icon" />
+
+</head>
+
+<body>
+    <!-- <div class="containerPagina"> -->
+    <div class="conteudotodo">
+        <section id="sidebar" class="sidebar">
+            <div class="container">
+                <div class="options">
+                    <div id="bt_icon" class="icon">
+                        <img src="../../img/icons/logo-white-small.png" alt="Logo Banktracker">
+                        <span class="subtitle hide">Banktracker</span>
+                    </div>
+                    <div id="dash" class="icon">
+                        <img src="../../img/icons/statistics-disabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Dashboard</span>
+                    </div>
+                    <div id="relatorio" class="icon">
+                        <img src="../../img/icons/clipboard-disabled.png" alt="Relatórios">
+                        <span class="subtitle hide">Relatórios</span>
+                    </div>
+                    <div id="Blacklist" class="icon">
+                        <img src="../../img/icons/Blacklist-disabled.png" alt="Dashboard">
+                        <span class="subtitle hide">Blacklist</span>
+                    </div>
+                    <div id="Incidente" class="icon">
+                        <img src="../../img/icons/tool-enabled.png" alt="Incidente">
+                        <span class="subtitle hide">Incidente</span>
+                    </div>
+                    <div id="config" class="icon">
+                        <img src="../../img/icons/engine-disabled.png" alt="Configurações">
+                        <span class="subtitle hide">Configurações</span>
+                    </div>
+                </div>
+                <div class="options">
+                    <div id="logout" class="icon">
+                        <img src="../../img/icons/power-off.png" alt="">
+                        <span class="subtitle hide">Logout</span>
+                    </div>
+                    <div id="icon_extend" class="icon">
+                        <img id="icon_extend_img" src="../../img/icons/extend-disabled.png" alt="">
+                        <span class="subtitle hide">Recolher</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="conteudoladodireito">
+            <span style="font-size: 30px;"><b style="color: #F3B700;">I</b>ncidentes</span><br>
+            <span>Incidentes abertos e finalizados</span>
+
+            <div class="todas-div-incidentes">
+                <!-- início, incidentes abertos -->
+                <div class="div-incidentes-abertos" id="incidentes_abertos_list">
+                   
+                </div>
+                <!-- fim, incidentes abertos -->
+
+                <!-- modal -->
+                <div id="realizar_finalizacao"></div>
+                <div class="FinalizarRelatorio">
+                    <div class="divRelatarDanos">
+                        <span style="font-size: 20px;"><span style="color: #F3B700;">F</span>inalizar
+                            Incidente</span>
+                        <div class="dados-r">
+                            <div class="dados">
+                                <p>Número:</p>
+                                <span id="idIncidenteModal">103</span>
+                            </div>
+                            <div class="dados">
+                                <p>Dispositivo:</p>
+                                <span id="hostnameModal">Caixa 1</span>
+                            </div>
+                            <div class="dados">
+                                <p>CPU:</p>
+                                <span id="usoCpuModal">90%</span>
+                            </div>
+                            <div class="dados">
+                                <p>RAM:</p>
+                                <span id="usoRamModal">7.5G</span>
+                            </div>
+                            <div class="dados">
+                                <p>Disco:</p>
+                                <span id="usoDiscoModal">90%</span>
+                            </div>
+                        </div>
+                        <form class="relatarProblema" id="form_finalizar" onsubmit="alertaFinalizarIncidente()">
+                            <p><span style="color: #F3B700;">R</span>elatório:</p>
+                            <input type="hidden" id="idIncidente" name="idIncidente">
+                            <textarea id="descricao_incidente" name="descricaoIncidente" placeholder="Insira uma breve descrição:" required></textarea>
+                            <button class="btn_finalizar" id="btn_finalizar" type="submit">Finalizar</button>
+                        </form>
+                        <a onclick="fecharModal()" id="close"><img src="../../img/icons/close.svg" alt="" srcset=""></a>
+                    </div>
+                </div>
+                <!-- fim do modal-->
+                <div class="div-incidentes-finalizados" id="incidentes_finalizados_list">
+                    <span class="incidentes_titulo"><span style="color: #F3B700;">F</span>inalizados:</span>
+                </div>
+                <!-- fim,incidentes finalizados-->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/globalFunctions.js"></script>
+<script src="../js/sidebar.js"></script>
+<script src="js/incidente.js"></script>

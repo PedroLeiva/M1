@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    --black: #000;
+    --white: #FCFCFC;
+    --grey: #2F2F2F;
+    --yellow : #F3B700;
+    --red: #D64550;
+}
+
+@font-face { font-family: Font Awesome; src: url('fonts/Font\ Awesome\ 5\ Brands-Regular-400.otf'); } 
+
+div.info_user {
+    display: flex;
+    width: 100%;
+}
+
+div.info_user div.container {
+    width: 100%;
+    height: 70px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+
+div.info_user div.container div {
+    display: flex;
+    align-items: center;
+}
+
+div.info_user div.container div img {
+    width: 36px;
+    margin-right: 15px;
+}
+
+@keyframes fade_in{
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;  
+    }
+} 
+
+@keyframes fade_out{
+    from {
+        opacity: 1;
+    } 
+    to {
+        opacity: 0;  
+    }
+} 
