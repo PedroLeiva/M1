@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./2ADSB-2021-1-Grupo-01/Dashboard/bin/www"
+    "start": "node ./2ADSB-2021-1-Grupo-01/Dashboard/bin/www",
+    "postinstall": "cd 2ADSB-2021-1-Grupo-01/Dashboard && npm install"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
