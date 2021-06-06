@@ -189,10 +189,12 @@ section.dashboard div.cont_graphics div.container div.use_disco_memoria div.cont
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
+
 }
 
 section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.use_data div.data p {
     font-size: 18px;
+
 }
 
 section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.use_data div.data p span {
@@ -202,9 +204,17 @@ section.dashboard div.cont_graphics div.container div.use_disco_memoria div.cont
 
 section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.use_data div.data span {
     font-size: 22px;
+
 }
 
 @media (max-width: 1366px){
+    section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container{
+        padding: 10px;
+    }
+    section.dashboard div.cont_graphics div.container div.use_cpu  {
+        padding: 10px;
+        margin-right: 25px;
+    }
     section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.graphic{
         height: 10%;
     }
@@ -226,7 +236,7 @@ section.dashboard div.cont_graphics div.container div.use_disco_memoria div.cont
     font-size: 16px;
     }
 
-    /* segundo grafico*/
+    
     section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.use_data div.data p {
         font-size: 15px;
     }
@@ -237,7 +247,7 @@ section.dashboard div.cont_graphics div.container div.use_disco_memoria div.cont
     }
     
     section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.use_data div.data span {
-        font-size: 16px;
+        font-size: 14.2px;
     }
 
     section.dashboard div.cont_graphics div.container div.use_disco_memoria div.container div.cont_memory{

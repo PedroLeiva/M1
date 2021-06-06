@@ -2,6 +2,13 @@ let timeout = 150;
 
 window.onload = mainRelatorio();
 
+setInterval(() => {
+    let divCarousel = document.getElementById("items");
+    divCarousel.innerHTML = '';
+    timeout = 150;
+    buscarCaixas();
+}, 12000);
+
 function mainRelatorio() {
     start_session();
     buscarCaixas();
@@ -41,7 +48,7 @@ function buscarRegistroHistorico(caixa) {
 }
 
 function inserirCaixasNoCarousel(caixa, historico) {
-    let id = caixa.hostname.replaceAll('-', '');
+    let id = retirarTraco(caixa.hostname);
     let divCarousel = document.getElementById("items");
     divCarousel.innerHTML += `
         <div class="card" id="${id}">
@@ -86,7 +93,7 @@ function inserirCaixasNoCarousel(caixa, historico) {
     setTimeout(() => {
         document.getElementById(`btn_exibicao_${caixa.hostname}`).onclick = () => {
             document.querySelectorAll('.card').forEach(card => {
-                let id = caixa.hostname.replaceAll('-', '');
+                let id = retirarTraco(caixa.hostname);
                 card.getAttribute("id") == id ? card.style.borderColor = 'rgba(243, 183, 0, 1)' : card.style.borderColor = 'rgba(60, 60, 60, 0.2)'
             });
             document.querySelectorAll('.hostname').forEach(hostname => {
@@ -95,7 +102,9 @@ function inserirCaixasNoCarousel(caixa, historico) {
             exibirDadosNaTable(caixa.hostname);
         };
         document.getElementById(`btn_manutencao_${caixa.hostname}`).onclick = () => {
-            console.log('manutention')
+            console.log('manutention');
+            abrirModal(caixa.hostname, historico.idHistorico, historico.usoCpu.toFixed(1), calcularPorcentagem(caixa.ram,historico.usoRam).toFixed(1), calcularPorcentagem(caixa.hd,historico.usoDisco).toFixed(1));
+        
         }; 
     }, timeout);    
 }
@@ -134,4 +143,53 @@ function inserirDadosNaTabela(historico) {
         </div>
     `;
         //<a class="detalhes" id="detalhes${historico.idHistorico}"><img src="../../img/icons/relatorio.png"></a>
+}
+
+function abrirModal(hostname, idHistorico, cpu, ram, disco) {
+    let idFuncionarioSuporte = sessionStorage.getItem('idFuncionarioSuporte');
+
+    // setando informações nos modais
+    idFuncionario_modal.value = idFuncionarioSuporte;
+    idHistorico_modal.value = idHistorico;
+    hostname_modal.innerText = hostname;
+    cpu_modal.innerText = cpu+"%";
+    ram_modal.innerText = ram+"%";
+    disco_modal.innerText = disco+"%";
+    window.location.href="#realiza_relatorio";
+}
+
+function declararIncidente() {
+    event.preventDefault();
+    const form = new URLSearchParams(new FormData(form_incidente));
+    fetch(`/incidente/criar`, {
+        method: "POST",
+        body: form
+    }).then(resposta => {
+        if (resposta.ok) {
+            resposta.text().then(texto => {
+                alertaSucesso(texto);
+            });
+        } else {
+            resposta.text().then(error => {
+               alertaErro(error);
+            });
+        }
+    });
+}
+
+function alertaSucesso(texto){
+    window.location.href="#";
+    Swal.fire(
+        'Sucesso',
+        texto,
+        'success'
+    );
+}
+
+function alertaErro(error){
+    Swal.fire(
+        'Ops...',
+        error,
+        'error'
+    );
 }

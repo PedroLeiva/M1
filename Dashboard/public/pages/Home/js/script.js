@@ -1,5 +1,12 @@
 let timeout = 150;
 
+setInterval(() => {
+    let divCarousel = document.getElementById("items");
+    divCarousel.innerHTML = '';
+    timeout = 150;
+    buscarCaixas();
+}, 12000);
+
 window.onload = start_session(), buscarCaixas();
 
 function buscarCaixas() {
@@ -33,7 +40,7 @@ function buscarRegistroHistorico(caixa) {
 }
 
 function inserirCaixasNoCarousel(caixa, historico) {
-    let id = caixa.hostname.replaceAll('-', '');
+    let id = retirarTraco(caixa.hostname);
     let divCarousel = document.getElementById("items");
     divCarousel.innerHTML += `
         <div class="card" id="${id}">
@@ -78,7 +85,7 @@ function inserirCaixasNoCarousel(caixa, historico) {
     setTimeout(() => {
         document.getElementById(`btn_exibicao_${caixa.hostname}`).onclick = () => {
             document.querySelectorAll('.card').forEach(card => {
-                let id = caixa.hostname.replaceAll('-', '');
+                let id = retirarTraco(caixa.hostname);
                 card.getAttribute("id") == id ? card.style.borderColor = 'rgba(243, 183, 0, 1)' : card.style.borderColor = 'rgba(60, 60, 60, 0.2)'
             });
             document.querySelectorAll('.hostname').forEach(hostname => {

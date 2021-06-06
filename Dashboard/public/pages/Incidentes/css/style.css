@@ -3,8 +3,8 @@
     background-color: #f1f1f1;
 }
 .conteudoladodireito{
-    width: 90%;
-    margin: 25px 0px 0px 20px;
+    width: 100%;
+   /*  margin: 25px 0px 0px 20px; */
     padding: 30px;
 }
 .todas-div-incidentes{
@@ -47,7 +47,7 @@
 .card_incidente span,
 .card_incidente_relatorio span,
 .dados-r span{
-    color: #555
+    color: #555;
 }
 
 .headDados, .dados_incidente, .opcoes {
@@ -58,9 +58,7 @@
 .dados_incidente{
     width: 80%;
 }
-.opcoes img{
-    width: 25px;
-}
+
 .opcoes{
     width: 20%;
     cursor: pointer;
@@ -94,6 +92,36 @@
     margin-top: 5px;
     display: flex;
     justify-content: space-evenly;
+}
+@media (max-width: 1366px){
+    .div-incidentes-abertos,
+    .div-incidentes-finalizados{
+        height: 450px;
+    }
+    .card_incidente,
+    .card_incidente_relatorio{
+     width: 98%;
+     font-size: 15px;
+  }
+  .card_incidente span,
+.card_incidente_relatorios span,
+.card_incidente span,
+.card_incidente_relatorio span,
+.dados-r span{
+    font-size: 15px;
+}
+.opcoes img{
+    width: 25px;
+}
+.opcoes{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.opcoes div:first-child{
+  margin-right: 10px;;
+}
 }
 @keyframes fade_in {
     from {

@@ -13,7 +13,7 @@ div.carousel div.container {
 }
 
 div.carousel div.container div.card {
-    width: 350px;
+    width: 370px;
     height: 200px;
     padding: 15px;
     margin-right: 15px;
@@ -24,6 +24,8 @@ div.carousel div.container div.card {
     border-radius: 5px;
     border: 1px solid rgba(60, 60, 60, 0.2);
     background-color: white;
+
+    animation: fade_in 0.5s;
 }
 
 div.carousel div.container div.card div.info_atm {
@@ -69,12 +71,12 @@ div.carousel div.container div.card div.info_use_atm div.info_use div.status{
 }
 
 div.carousel div.container div.card div.info_use_atm div.info_use div.info p {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 div.carousel div.container div.card div.info_use_atm div.info_use div.info span {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     /* background-color: tomato; */
 }
 
@@ -142,8 +144,18 @@ div.carousel div.container::-webkit-scrollbar-thumb{
 
 @media(max-width: 1366px){
     div.carousel div.container div.card {
-        width: 24%;
+        width: 330px;
         height: 155px;
+    }
+
+    div.carousel div.container div.card div.info_use_atm div.info_use div.info p {
+        font-size: 12px;
+    }
+    
+    div.carousel div.container div.card div.info_use_atm div.info_use div.info span {
+        font-weight: 700;
+        font-size: 14px;
+        /* background-color: tomato; */
     }
 
     .title{

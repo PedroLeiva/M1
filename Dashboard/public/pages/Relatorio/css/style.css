@@ -20,6 +20,11 @@ section.relatorio div.cont_table {
     padding-left: 30px;
     padding-right: 30px;
 }
+@media (max-width: 1366px){
+    section.relatorio .table {
+        height: 350px;
+    }
+}
 
 @keyframes rotacao{
 
@@ -33,4 +38,101 @@ section.relatorio div.cont_table {
     animation-duration: 50s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+/* Modal */
+#realiza_relatorio{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    display: none;
+}
+#realiza_relatorio:target{
+    display: block;
+}
+#realiza_relatorio:target ~ .FinalizarRelatorio{
+    top: 25%;
+    transition: all .9s;
+    transition-delay: .4s;
+}
+.FinalizarRelatorio{
+    width: 550px;
+    height: 335px;
+    position: absolute;
+    margin-left: -275px;
+    left: 50%;
+    top: -410px;
+    background-color: #fff;
+    border-radius:10px;
+}
+.divRelatarDanos{
+    margin: 50px;
+    width: 85%;
+}
+#close{
+    color: rgb(124, 121, 121);
+    text-decoration: none;
+    font-size: 20px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: -240px;
+    margin-right: 15px;
+    right: 0;
+}
+#close:hover{
+    color: rgb(0, 0, 0);
+    font-size: 21px;
+}
+
+.div_contendoDuasDiv{
+    display: flex;
+    width: 100%;
+}
+.dados-r{
+    width: 49%;
+    height: 170px;
+    margin-top: 30px;
+}
+.dados{
+    display: inline-block;
+    margin: 15px;
+}
+
+.dados span{
+    color: #555;
+}
+
+.selecionar_pro{
+    width: 50%;
+    padding: 45px;
+}
+
+.btn_iniciar{
+    height: 30px;
+    width: 90px;
+    margin-top: -10px;
+    margin-right: 35px;
+    float: right;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(5, 148, 12);
+    color: #fff;
+}
+.btn_iniciar:hover{
+    background-color: rgb(5, 148, 12, .8);
+}
+
+select{
+    width: 160px;
+    height: 30px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 5px;
+}
+
+#img_close{
+    width: 24px;
 }

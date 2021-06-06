@@ -21,7 +21,7 @@ router.get('/sendEmail/:id/:email', (req, res) => {
     to: email,
     replyTo: "banktrackerhelp@gmail.com",
     subject: "Recuperação de senha",
-    text: `Acesse o link para atualizar sua senha: http://localhost:3000/pages/PasswordRecuperation/?${id}`,
+    text: `Acesse o link para atualizar sua senha: https://pi-ads-2021-2.azurewebsites.net/pages/PasswordRecuperation/?${id}`,
   }).then(info =>{
     console.log(info);
     res.status(200).send('Email enviado com sucesso!');

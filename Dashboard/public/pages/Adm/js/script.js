@@ -252,7 +252,9 @@ function details() {
 
         setTimeout(() => {
             conteudoDados.style.display = 'block';
-            conteudoDados.style = 'animation: fade_in 800ms;'
+            conteudoDados.style = 'animation: fade_in 800ms;';
+            document.querySelector(".table").style.height = '150px';
+            document.querySelector(".tituloInformacoes").style.height = '150px';
         }, 100);
         img.src = "../../img/icons/recolher-simbolo-enabled.png";
 
@@ -264,6 +266,8 @@ function details() {
         headDados.style.height = '60px';
         conteudoDados.style.display = 'none';
         img.src = '../../img/icons/expandindo-o-simbolo-disabled.png';
+        document.querySelector(".table").style.height = '300px';
+        document.querySelector(".tituloInformacoes").style.height = '300px';
     }
 }
 

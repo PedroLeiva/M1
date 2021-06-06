@@ -57,6 +57,52 @@
             </div>
         </section>
 
+        <!-- Modal -->
+
+            <div id="realiza_relatorio"></div>
+            <form class="FinalizarRelatorio" onsubmit="return declararIncidente()" id="form_incidente">
+                <div class="divRelatarDanos">
+                    <span style="font-size: 20px;"><span class="yellow">D</span>eclarar Incidente</span>
+                    <div class="div_contendoDuasDiv">
+                        <div class="dados-r">
+                            <div class="dados">
+                                <p>Dispositivo:</p>
+                                <span id="hostname_modal">Caixa 1</span>
+                            </div>
+                            <div class="dados">
+                                <p>CPU:</p>
+                                <span id="cpu_modal">90%</span>
+                            </div>
+                            <div class="dados">
+                                <p>RAM:</p>
+                                <span id="ram_modal">7.5G</span>
+                            </div>
+                            <div class="dados">
+                                <p>Disco:</p>
+                                <span id="disco_modal">90%</span>
+                            </div>
+                        </div>
+                        <div class="selecionar_pro">
+                            <span>Selecionar o tipo de incidente:</span><br><br>
+                            <div class="selecionar_aci">
+                                <input id="idFuncionario_modal" name="idFuncionarioSuporte" type="hidden">
+                                <input id="idHistorico_modal" name="idHistorico" type="hidden">
+                                <select id="aci" name="tipoIncidente">
+                                    <option value="Dados elevados">Dados elevados</option>
+                                    <option value="ac1">Acidente 1</option>
+                                    <option value="ac2">Acidente 2</option>
+                                    <option value="ac3">Acidente 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn_iniciar" type="submit">Iniciar</button>
+                    <a href="#" id="close">
+                        <img src="../../img/icons/close.svg" id="img_close" srcset="">
+                    </a>
+                </div>
+            </form>
+
         <section class="relatorio">
             <div class="info_user">
                 <div class="container">
@@ -98,5 +144,6 @@
     <script src="../js/globalFunctions.js"></script>
     <script src="../js/carousel.js"></script>
     <script src="js/script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
