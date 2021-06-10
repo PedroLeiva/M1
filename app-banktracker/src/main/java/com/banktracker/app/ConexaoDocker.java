@@ -3,9 +3,13 @@ package com.banktracker.app;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.apache.commons.dbcp2.BasicDataSource;
+
 
 public class ConexaoDocker {
      Connection conn;
+     private BasicDataSource banco;
+
 
     public Connection conexaoConteiner() {
         try {
@@ -20,6 +24,9 @@ public class ConexaoDocker {
 
         }
         return conn;
+    }
+     public BasicDataSource getBanco() {
+        return banco;
     }
 
 }

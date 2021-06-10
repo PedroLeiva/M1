@@ -64,6 +64,24 @@ public class Historico {
             System.out.println("Erro: " + e);
         }
     }
+   
+     public void salvarHistoricoDocker(){
+        try {
+            ConexaoDocker con = new ConexaoDocker();
+            JdbcTemplate template = new JdbcTemplate(con.getBanco());
+            String Historico = "INSERT INTO Historico VALUES (?, ?, ?, ?, ?)";
+            
+            Date date = new Date();
+            Timestamp dataDeHoje = new Timestamp(System.currentTimeMillis());
+       
+            template.update(Historico, usoCpu, usoRam, usoDisco, dataDeHoje, fk_hostname); 
+//            System.out.println(dataDeHoje);
+            System.out.println("Histórico salvo com sucesso");
+        } catch (Exception e) {
+            System.out.println("Erro ao salvar o histórico");
+            System.out.println("Erro: " + e);
+        }
+    }
     
     public Double getUsoCpu() {
         return usoCpu;

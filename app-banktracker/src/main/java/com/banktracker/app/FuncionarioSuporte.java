@@ -38,6 +38,29 @@ public class FuncionarioSuporte {
         
         return autenticacao;
     }
+    
+        public static Boolean autenticarSeDocker(String login, String senha) {
+        Boolean autenticacao = false;
+        ConexaoDocker con = new ConexaoDocker();
+        JdbcTemplate template = new JdbcTemplate(con.getBanco());
+        List<FuncionarioSuporte> usuario = template.query("SELECT * FROM FuncionarioSuporte WHERE email LIKE '" + login + "' AND senha LIKE '" + senha + "'", new BeanPropertyRowMapper(FuncionarioSuporte.class));
+        try {
+            if(!usuario.isEmpty()) {
+                autenticacao = true;
+                // Coleta o valor da fk da agencia
+                Integer idAgencia = usuario.get(0).getFk_numAgencia();
+                // Inicializa a istancia da agencia, com o valor da fk_numAgencia do usuario
+                Agencia agencia = Agencia.getInstance(idAgencia);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Não retornou usuário");
+            Log log1 = new Log("Nenhum usuário encontrado", e.toString());
+            log1.GerarLog();
+        }
+        
+        return autenticacao;
+    }
 
     public Integer getIdFuncionarioSuporte() {
         return idFuncionarioSuporte;

@@ -80,6 +80,26 @@ public class CaixaEletronico {
         }
     }
 
+        public void cadastrarCaixaEletronicoDocker(){
+        try {
+            ConexaoDocker con = new ConexaoDocker();
+            JdbcTemplate template = new JdbcTemplate(con.getBanco());
+            String caixaEletronico = "INSERT INTO CaixaEletronico VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+       
+            template.update(caixaEletronico, hostname, sistemaOperacional, cpuCaixa, processador, ram, hd, null, null, ativo, fk_numAgencia, nucleos, threads); 
+            System.out.println("Cadastro de caixa realizado com sucesso!");
+            SlackMensagens.enviarMensagem("Um caixa novo foi cadastrado! Caixa: " + hostname);
+        } catch (Exception e) {
+            String err = e.toString();
+          
+            if(err.contains("Violation of PRIMARY KEY constraint")){
+                System.out.println("Caixa já cadastrado!");
+            }else{
+                System.out.println(err);
+            }
+        }
+    }
+    
     public String getHostname() {
         return hostname;
     }
