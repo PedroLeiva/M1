@@ -17,6 +17,7 @@ com\banktracker\app\FinalizadorProcessos.class
 com\banktracker\app\Login.class
 com\banktracker\app\Conexao.class
 com\banktracker\app\TelaDeRelatorio.class
+com\banktracker\app\ConexaoDocker.class
 com\banktracker\app\TelaDeRelatorio$1.class
 com\banktracker\app\TelaLogin$1.class
 com\banktracker\app\TelaLogin$6.class
